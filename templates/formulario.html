@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registro de Produtos</title>
+</head>
+<body>
+    <h1>Produtos em Estoque</h1>
+    <ul>
+        {% for produto in produtos %}
+        <li>{{ produto[1] }} - Quilos: {{ produto[2] }} kg - Quantidade: {{ produto[3] }} - Preço Unitario: R$ {{ produto[4] }}
+            <a href="/editar/{{ produto[0] }}">Editar</a>
+            <a href="/excluir/{{ produto[0] }}">Excluir</a>
+        </li>
+        {% endfor %}
+    </ul>
+
+    <h1>Registrar Produto</h1>
+    <form action="/" method="post">
+        Nome: <input type="text" name="nome"><br>
+        Quilos: <input type="number" step="0.01" name="quilos"><br>
+        Quantidade: <input type="number" name="quantidade"><br>
+        Preço Unitario: R$ <input type="number" step="0.01" name="preco"><br>
+        <input type="submit" value="Adicionar Produto">
+    </form>
+</body>
+</html>

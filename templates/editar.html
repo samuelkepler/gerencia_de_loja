@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Editar Produto</title>
+</head>
+<body>
+    <h1>Editar Produto</h1>
+    <form action="/editar/{{ produto[0] }}" method="post">
+        Novo Nome: <input type="text" name="novo_nome" value="{{ produto[1] }}"><br>
+        Novos Quilos: <input type="number" step="0.01" name="novo_quilos" value="{{ produto[2] }}"><br>
+        Nova Quantidade: <input type="number" name="nova_quantidade" value="{{ produto[3] }}"><br>
+        Novo Preço: <input type="number" step="0.01" name="novo_preco" value="{{ produto[4] }}"><br>
+        <input type="submit" value="Salvar Alterações">
+    </form>
+</body>
+</html>

@@ -1,0 +1,13 @@
+conn = sqlite3.connect('estoque.db')
+cursor = conn.cursor()
+
+cursor.execute('''
+    CREATE TABLE IF NOT EXISTS produtos (
+        id INTEGER PRIMARY KEY,
+        nome TEXT,
+        quilos REAL,
+        quantidade INTEGER,
+        preco REAL
+    )
+''')
+conn.commit()
